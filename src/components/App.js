@@ -1,8 +1,29 @@
 import '../styles/App.scss';
 import logoAdaCards from '../images/logo-AdaCards.png';
 import logoAdalab from '../images/logo-adalab.png';
+import { useState } from 'react';
 
 function App() {
+  const [data, setData] = useState({
+    palette: '',
+    name: '',
+    job: '',
+    phone: '',
+    email: '',
+    linkedin: '',
+    github: '',
+    photo: '', 
+   });
+    let cardName;
+   const handleInput = (ev) => {
+     const inputValue = ev.target.value;
+     const inputName = ev.target.name;
+      setData({...data, [inputName]:inputValue});
+
+    setData(inputValue === '' ? `Nombre Apellido` : inputValue);
+   };
+   
+
   return (
     <div>
       <header className="headerCreate">
@@ -23,7 +44,8 @@ function App() {
           <div className="js-cardDisplay__card cardDisplay__card">
             <div className="js-titleWrap titleWrap titleWrapColor">
               <h1 className="nameCardColor js-nameCard cardDisplay__card--name">
-                Nombre Apellido
+                {cardName}
+                {console.log(cardName)}
               </h1>
               <h3 className="js-careerCard cardDisplay__card--profesion">
                 Front-end developer
@@ -132,7 +154,7 @@ function App() {
                 className="rotate js-upArrowArray js-upArrow1 fa-solid fa-chevron-up legend__tab--arrow"
               ></i>
             </legend>
-            <div className="js-container js-form__contact form__contact hide">
+            <div className="js-container js-form__contact form__contact {/*hide*/}">
               <label className="form__contact--label" htmlFor="name">Nombre completo</label>
               <input
                 className="js-name form__contact--input"
@@ -141,6 +163,7 @@ function App() {
                 name="name"
                 placeholder="Ej:Saily Jill"
                 required
+                onInput={handleInput}
               />
               <label className="form__contact--label" htmlFor="text">Puesto </label>
               <input
@@ -150,6 +173,7 @@ function App() {
                 name="job"
                 placeholder="Ej: Front-end unicorn"
                 required
+                onInput={handleInput}
               />
               <label className="form__contact--label" htmlFor="text">Imagen de perfil</label>
               <div className="form__contact--div">
@@ -172,6 +196,7 @@ function App() {
                 placeholder="Ej: sally.hill@gamil.com"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 required
+                onInput={handleInput}
               />
               <label className="form__contact--label" htmlFor="tel"> Teléfono</label>
               <input
@@ -182,6 +207,7 @@ function App() {
                 pattern="^[0-9]{9}$"
                 placeholder="Ej: 555-55-55-55"
                 required
+                onInput={handleInput}
               />
               <label className="form__contact--label" htmlFor="text"> Linkedin</label>
               <input
@@ -191,6 +217,7 @@ function App() {
                 name="linkedin"
                 placeholder="Ej: /sally.hill"
                 required
+                onInput={handleInput}
               />
               <label className="form__contact--label" htmlFor="text"> Github</label>
               <input
@@ -200,6 +227,7 @@ function App() {
                 name="github"
                 placeholder="Ej:/sally.hill"
                 required
+                onInput={handleInput}
               />
             </div>
           </fieldset>
@@ -213,7 +241,7 @@ function App() {
                 className="rotate js-upArrowArray js-upArrow2 fa-solid fa-chevron-up legend__tab--arrow"
               ></i>
             </legend>
-            <div className="js-container js-containerCreate shareTwitter shareTwitter1 hide">
+            <div className="js-container js-containerCreate shareTwitter shareTwitter1 {/*hide*/}">
               <button
                 className="js-btn-create shareTwitter__buttoncreate btnOrange"
                 type="button"
@@ -225,7 +253,7 @@ function App() {
                 <span className="shareTwitter__buttoncreate--text">Crear tarjeta</span>
               </button>
             </div>
-            <div className="js-shareTwitter shareTwitter hide shareTwitter2">
+            <div className="js-shareTwitter shareTwitter {/*hide*/} shareTwitter2">
               <h4 className="shareTwitter__text">La tarjeta ha sido creada:</h4>
               <a
                 className="js-cardLink shareTwitter__link"

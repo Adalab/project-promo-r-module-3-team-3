@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function App() {
   const [data, setData] = useState({
-    palette: '',
+    palette: '1',
     name: '',
     job: '',
     phone: '',
@@ -14,13 +14,11 @@ function App() {
     github: '',
     photo: '', 
    });
-    let cardName;
+  
    const handleInput = (ev) => {
-     const inputValue = ev.target.value;
+    const inputValue = ev.target.value;
      const inputName = ev.target.name;
-      setData({...data, [inputName]:inputValue});
-
-    setData(inputValue === '' ? `Nombre Apellido` : inputValue);
+     setData({...data, [inputName]:inputValue});
    };
    
 
@@ -44,46 +42,49 @@ function App() {
           <div className="js-cardDisplay__card cardDisplay__card">
             <div className="js-titleWrap titleWrap titleWrapColor">
               <h1 className="nameCardColor js-nameCard cardDisplay__card--name">
-                {cardName}
-                {console.log(cardName)}
+                {data.name? data.name : 'Nombre Apellido'}
               </h1>
               <h3 className="js-careerCard cardDisplay__card--profesion">
-                Front-end developer
+                {data.job || 'Front-end developer'}
               </h3>
             </div>
             <div className="js__profile-image cardDisplay__card--photo"></div>
             <ul className="cardDisplay__card--iconList">
               <li className="cardListElement">
                 <a
-                  className="iconColor js-telCard cardListElement__icon telf"
-                  href="tel:example"
+                  className={'iconColor cardListElement__icon telf ' + (data.phone ? '' : 'not-active')}
+                  href={`tel:${data.phone}`}
                   target="_blank"
+                  rel="noreferer"
                 >
                   <i className="fa-solid fa-mobile-screen icon"></i
                 ></a>
               </li>
               <li className="cardListElement">
                 <a
-                  className="iconColor js-mailCard cardListElement__icon email"
-                  href="mailto:example@gmail.com"
+                  className={'iconColor cardListElement__icon email ' + (data.email ? '' : 'not-active')}
+                  href={`mailto:${data.email}`}
                   target="_blank"
+                  rel="noreferer"
                 >
                   <i className="fa-regular fa-envelope"></i>
                 </a>
               </li>
               <li className="cardListElement">
                 <a
-                  className="iconColor js-linkedinCard cardListElement__icon linkedin"
-                  href="https://www.linkedin.com"
+                  className={'iconColor cardListElement__icon linkedin ' + (data.linkedin ? '' : 'not-active')}
+                  href={!data.linkedin ? '' :  `https://www.linkedin.com/in/${data.linkedin}`}
                   target="_blank"
+                  rel="noreferer"
                   ><i className="fa-brands fa-linkedin-in icon-dots icon"></i
                 ></a>
               </li>
               <li className="cardListElement">
                 <a
-                  className="iconColor js-githubCard cardListElement__icon github"
-                  href="https://github.com/"
-                  target="_blank"
+                  className={'iconColor cardListElement__icon github ' + (data.github ? '' : 'not-active')}
+                  href={!data.github ? '' :  `https://github.com/${data.github}`}
+                  target="_blank" 
+                  rel="noreferer"
                   ><i className="fa-brands fa-github-alt icon-dots icon"></i
                 ></a>
               </li>
@@ -107,11 +108,12 @@ function App() {
                 <div className="aqua colorContainer">
                   <input
                     className="js-palette1 inputColor"
-                    /*checked*/
+                    checked={data.palette === '1'}
                     type="radio"
                     id="color1"
                     name="palette"
-                    // value="1"
+                    value="1"
+                    onChange={handleInput}
                   />
                   <div className="colorBox aqua-1"></div>
                   <div className="colorBox aqua-2"></div>
@@ -120,10 +122,12 @@ function App() {
                 <div className="red colorContainer">
                   <input
                     className="js-palette2 inputColor"
+                    checked={data.palette === '2'}
                     type="radio"
                     id="color2"
                     name="palette"
-                    // value="2"
+                    value="2"
+                    onChange={handleInput}
                   />
                   <div className="colorBox red-1"></div>
                   <div className="colorBox red-2"></div>
@@ -132,10 +136,12 @@ function App() {
                 <div className="blueandbeige colorContainer">
                   <input
                     className="js-palette3 inputColor"
+                    checked={data.palette === '3'}
                     type="radio"
                     id="color3"
                     name="palette"
-                    // value="3"
+                    value="3"
+                    onChange={handleInput}
                   />
                   <div className="colorBox blueandbeige-1"></div>
                   <div className="colorBox blueandbeige-2"></div>
@@ -164,6 +170,7 @@ function App() {
                 placeholder="Ej:Saily Jill"
                 required
                 onInput={handleInput}
+                value={data.name}
               />
               <label className="form__contact--label" htmlFor="text">Puesto </label>
               <input
@@ -174,6 +181,7 @@ function App() {
                 placeholder="Ej: Front-end unicorn"
                 required
                 onInput={handleInput}
+                value={data.job}
               />
               <label className="form__contact--label" htmlFor="text">Imagen de perfil</label>
               <div className="form__contact--div">
@@ -181,7 +189,7 @@ function App() {
                 <input
                   className="js__profile-upload-btn hide"
                   type="file"
-                  // value=""
+                  // TODO: añadir value de la foto
                   name="photo"
                   id="photo"
                 />
@@ -197,6 +205,7 @@ function App() {
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 required
                 onInput={handleInput}
+                value={data.email}
               />
               <label className="form__contact--label" htmlFor="tel"> Teléfono</label>
               <input
@@ -208,6 +217,7 @@ function App() {
                 placeholder="Ej: 555-55-55-55"
                 required
                 onInput={handleInput}
+                value={data.phone}
               />
               <label className="form__contact--label" htmlFor="text"> Linkedin</label>
               <input
@@ -215,9 +225,10 @@ function App() {
                 type="text"
                 id="text"
                 name="linkedin"
-                placeholder="Ej: /sally.hill"
+                placeholder="Ej: sally-hill"
                 required
                 onInput={handleInput}
+                value={data.linkedin}
               />
               <label className="form__contact--label" htmlFor="text"> Github</label>
               <input
@@ -225,9 +236,10 @@ function App() {
                 type="text"
                 id="text"
                 name="github"
-                placeholder="Ej:/sally.hill"
+                placeholder="Ej: sallyhill"
                 required
                 onInput={handleInput}
+                value={data.github}
               />
             </div>
           </fieldset>

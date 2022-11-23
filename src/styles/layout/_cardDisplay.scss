@@ -85,6 +85,7 @@
         justify-content: center;
         align-items: center;
         color: $colorSubtitle;
+        cursor: pointer; 
         }
     }
 
@@ -94,3 +95,8 @@
     margin-bottom: 10px;
     padding-left: 15px;//20-5del borde
     }
+
+.not-active {
+    pointer-events: none; 
+    cursor: default; 
+}

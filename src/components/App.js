@@ -17,10 +17,33 @@ function App() {
   
    const handleInput = (ev) => {
     const inputValue = ev.target.value;
-     const inputName = ev.target.name;
+    const inputName = ev.target.name;
      setData({...data, [inputName]:inputValue});
    };
    
+   const handleReset = (ev) => {
+    ev.preventDefault();
+    setData({ 
+      palette: '1',
+      name: '',
+      job: '',
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: '',
+      photo: '',
+   }
+  )
+  }
+
+    //FALTA que al clickar la paleta cambie de color
+   const changePalette = (ev) => {
+  //   cardDisplayContainer.classList.remove ('palette1');
+  //   cardDisplayContainer.classList.remove ('palette2');
+  //   cardDisplayContainer.classList.remove ('palette3');
+  //   cardDisplayContainer.classList.add(`palette${ev.currentTarget.value}`);
+};
+  
 
   return (
     <div>
@@ -36,7 +59,7 @@ function App() {
       </header>
       <main className="mainCreate">
         <section className="cardDisplay">
-          <button className="js-resetBtn cardDisplay__reset">
+          <button className="js-resetBtn cardDisplay__reset" onClick={handleReset}>
             <i className="fa-solid fa-trash-can"></i> Reset
           </button>
           <div className="js-cardDisplay__card cardDisplay__card">
@@ -55,7 +78,7 @@ function App() {
                   className={'iconColor cardListElement__icon telf ' + (data.phone ? '' : 'not-active')}
                   href={`tel:${data.phone}`}
                   target="_blank"
-                  rel="noreferer"
+                  rel="noreferrer"
                 >
                   <i className="fa-solid fa-mobile-screen icon"></i
                 ></a>
@@ -65,7 +88,7 @@ function App() {
                   className={'iconColor cardListElement__icon email ' + (data.email ? '' : 'not-active')}
                   href={`mailto:${data.email}`}
                   target="_blank"
-                  rel="noreferer"
+                  rel="noreferrer"
                 >
                   <i className="fa-regular fa-envelope"></i>
                 </a>
@@ -75,7 +98,7 @@ function App() {
                   className={'iconColor cardListElement__icon linkedin ' + (data.linkedin ? '' : 'not-active')}
                   href={!data.linkedin ? '' :  `https://www.linkedin.com/in/${data.linkedin}`}
                   target="_blank"
-                  rel="noreferer"
+                  rel="noreferrer"
                   ><i className="fa-brands fa-linkedin-in icon-dots icon"></i
                 ></a>
               </li>
@@ -84,7 +107,7 @@ function App() {
                   className={'iconColor cardListElement__icon github ' + (data.github ? '' : 'not-active')}
                   href={!data.github ? '' :  `https://github.com/${data.github}`}
                   target="_blank" 
-                  rel="noreferer"
+                  rel="noreferrer"
                   ><i className="fa-brands fa-github-alt icon-dots icon"></i
                 ></a>
               </li>

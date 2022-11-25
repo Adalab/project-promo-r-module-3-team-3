@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "./static/css/main.b7b5282c.css",
+    "main.js": "./static/js/main.efbb618b.js",
+    "static/media/photoexample2.png": "./static/media/photoexample2.e27617cb6104ce2408a8.png",
+    "static/media/logo-AdaCards.png": "./static/media/logo-AdaCards.8b6609b7565f7293c300.png",
+    "index.html": "./index.html",
+    "main.b7b5282c.css.map": "./static/css/main.b7b5282c.css.map",
+    "main.efbb618b.js.map": "./static/js/main.efbb618b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7b5282c.css",
+    "static/js/main.efbb618b.js"
+  ]
+}

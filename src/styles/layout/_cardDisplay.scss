@@ -44,7 +44,6 @@
         /*shadow : pxX pxY  blur color/opacidad20% */
         box-shadow: 0 1px 10px  rgba(0, 0, 0, 0.20);
         &--name {
-            color: $colorSubtitle;
             @include t(rem(18),rem(20));
             font-family:$font-familySecondary;
             font-weight: 700;
@@ -75,7 +74,7 @@
 .cardListElement{
     text-decoration: none;
     &__icon {
-        border: solid 2px $colorBorder;
+        border: solid 2px;
         height: 32px;
         width: 32px;
         border-radius:16px;
@@ -84,14 +83,12 @@
         text-decoration: none;
         justify-content: center;
         align-items: center;
-        color: $colorSubtitle;
         cursor: pointer; 
         }
     }
 
 
 .titleWrap {
-    border-left:solid 5px #438792;
     margin-bottom: 10px;
     padding-left: 15px;//20-5del borde
     }

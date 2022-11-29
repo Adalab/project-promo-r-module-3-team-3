@@ -69,7 +69,7 @@ function App() {
           >
             <i className="fa-solid fa-trash-can"></i> Reset
           </button>
-          <div className="js-cardDisplay__card cardDisplay__card">
+          <div className={`js-cardDisplay__card cardDisplay__card ${palette}`}>
             <div className="js-titleWrap titleWrap titleWrapColor">
               <h1 className="nameCardColor js-nameCard cardDisplay__card--name">
                 {data.name ? data.name : 'Nombre Apellido'}
@@ -162,6 +162,7 @@ function App() {
                     name="palette"
                     value="1"
                     onChange={handleInput}
+                    onClick={handleClick}
                   />
                   <div className="colorBox aqua-1"></div>
                   <div className="colorBox aqua-2"></div>
@@ -176,6 +177,7 @@ function App() {
                     name="palette"
                     value="2"
                     onChange={handleInput}
+                    onClick={handleClick}
                   />
                   <div className="colorBox red-1"></div>
                   <div className="colorBox red-2"></div>
@@ -190,6 +192,7 @@ function App() {
                     name="palette"
                     value="3"
                     onChange={handleInput}
+                    onClick={handleClick}
                   />
                   <div className="colorBox blueandbeige-1"></div>
                   <div className="colorBox blueandbeige-2"></div>

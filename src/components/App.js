@@ -15,6 +15,8 @@ function App() {
     photo: '',
   });
 
+  const [palette, setPalette] = useState('palette1');
+
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
@@ -33,21 +35,19 @@ function App() {
       github: '',
       photo: '',
     });
+    setPalette('palette1');
   };
+
+  const handleClick = (ev) => {
+    setPalette(`palette${ev.currentTarget.value}`)
+  };
+  
   const handleClickFetch = () => {
     fetchApi().then((responseData) => {
       setStarWarsData(responseData);
     });
   };
 
-  return;
-  //FALTA que al clickar la paleta cambie de color
-  const changePalette = (ev) => {
-    //   cardDisplayContainer.classList.remove ('palette1');
-    //   cardDisplayContainer.classList.remove ('palette2');
-    //   cardDisplayContainer.classList.remove ('palette3');
-    //   cardDisplayContainer.classList.add(`palette${ev.currentTarget.value}`);
-  };
 
   return (
     <div>

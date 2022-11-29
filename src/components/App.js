@@ -1,6 +1,7 @@
 import '../styles/App.scss';
 import logoAdaCards from '../images/logo-AdaCards.png';
 import logoAdalab from '../images/logo-adalab.png';
+import fetchApi from '../services/api';
 import { useState } from 'react';
 
 function App() {
@@ -12,10 +13,12 @@ function App() {
     email: '',
     linkedin: '',
     github: '',
-    photo: '',
+    photo: 'https://picsum.photos/200/300',
   });
 
   const [palette, setPalette] = useState('palette1');
+
+  const [apiCard, setApiCard] = useState({});
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
@@ -43,8 +46,8 @@ function App() {
   };
   
   const handleClickFetch = () => {
-    fetchApi().then((responseData) => {
-      setStarWarsData(responseData);
+    fetchApi(data).then((responseData) => {
+      setApiCard(responseData);
     });
   };
 
@@ -324,6 +327,7 @@ function App() {
                 className="js-btn-create shareTwitter__buttoncreate btnOrange"
                 type="button"
                 title="¡Crea tu tarjeta!"
+                onClick={handleClickFetch}
               >
                 <i className="fa-regular fa-address-card shareTwitter__buttoncreate--icon"></i>
                 <span className="shareTwitter__buttoncreate--text">
@@ -336,9 +340,10 @@ function App() {
               <a
                 className="js-cardLink shareTwitter__link"
                 title="¡Aquí tienes tu tarjeta!"
-                href=""
+                href={apiCard.success && apiCard.cardURL}
                 target="_blank"
-              ></a>
+                rel="noreferrer"
+              >{apiCard.success ? apiCard.cardURL : apiCard.error}</a>
               <a
                 className="js-twitterBtn shareTwitter__buttonshare"
                 title="Tu tarjeta en un tweet"

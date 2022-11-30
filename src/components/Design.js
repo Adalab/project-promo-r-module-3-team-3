@@ -1,4 +1,14 @@
 function Design(prop){
+  const handleChange = (ev) => {
+    prop.handleInput({
+      name: ev.target.name,
+      value: ev.target.value
+    })
+  }
+  const handleClick = (ev) => {
+    prop.setPalette(`palette${ev.currentTarget.value}`)
+  };
+
     return (  <fieldset className="fieldset">
     <legend className="js-containerLegend containerLegend">
       <div className="legend__tab">
@@ -20,8 +30,8 @@ function Design(prop){
             id="color1"
             name="palette"
             value="1"
-            onChange={prop.handleInput}
-            onClick={prop.handleClick}
+            onChange={handleChange}
+            onClick={handleClick}
           />
           <div className="colorBox aqua-1"></div>
           <div className="colorBox aqua-2"></div>
@@ -35,8 +45,8 @@ function Design(prop){
             id="color2"
             name="palette"
             value="2"
-            onChange={prop.handleInput}
-            onClick={prop.handleClick}
+            onChange={handleChange}
+            onClick={handleClick}
           />
           <div className="colorBox red-1"></div>
           <div className="colorBox red-2"></div>
@@ -50,8 +60,8 @@ function Design(prop){
             id="color3"
             name="palette"
             value="3"
-            onChange={prop.handleInput}
-            onClick={prop.handleClick}
+            onChange={handleChange}
+            onClick={handleClick}
           />
           <div className="colorBox blueandbeige-1"></div>
           <div className="colorBox blueandbeige-2"></div>

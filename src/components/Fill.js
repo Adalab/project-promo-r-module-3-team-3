@@ -1,4 +1,11 @@
 function Fill(prop){
+  const handleChange = (ev) => {
+    prop.handleInput({
+      name: ev.target.name,
+      value: ev.target.value
+    })
+  }
+
     return ( <fieldset className="js-fieldsetFill fieldset">
     <legend className="js-containerLegend js-containerLegendFill containerLegend">
       <div className="legend__tab">
@@ -18,7 +25,7 @@ function Fill(prop){
         name="name"
         placeholder="Ej:Saily Jill"
         required
-        onInput={prop.handleInput}
+        onChange={handleChange}
         value={prop.data.name}
       />
       <label className="form__contact--label" htmlFor="text">
@@ -31,7 +38,7 @@ function Fill(prop){
         name="job"
         placeholder="Ej: Front-end unicorn"
         required
-        onInput={prop.handleInput}
+        onChange={handleChange}
         value={prop.data.job}
       />
       <label className="form__contact--label" htmlFor="text">
@@ -61,7 +68,7 @@ function Fill(prop){
         placeholder="Ej: sally.hill@gamil.com"
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
         required
-        onInput={prop.handleInput}
+        onChange={handleChange}
         value={prop.data.email}
       />
       <label className="form__contact--label" htmlFor="tel">
@@ -75,7 +82,7 @@ function Fill(prop){
         pattern="^[0-9]{9}$"
         placeholder="Ej: 555-55-55-55"
         required
-        onInput={prop.handleInput}
+        onChange={handleChange}
         value={prop.data.phone}
       />
       <label className="form__contact--label" htmlFor="text">
@@ -88,7 +95,7 @@ function Fill(prop){
         name="linkedin"
         placeholder="Ej: sally-hill"
         required
-        onInput={prop.handleInput}
+        onChange={handleChange}
         value={prop.data.linkedin}
       />
       <label className="form__contact--label" htmlFor="text">
@@ -101,7 +108,7 @@ function Fill(prop){
         name="github"
         placeholder="Ej: sallyhill"
         required
-        onInput={prop.handleInput}
+        onChange={handleChange}
         value={prop.data.github}
       />
     </div>

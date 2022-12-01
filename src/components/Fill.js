@@ -7,14 +7,14 @@ function Fill(prop){
   }
 
     return ( <fieldset className="js-fieldsetFill fieldset">
-    <legend className="js-containerLegend js-containerLegendFill containerLegend">
+    <legend className="js-containerLegend js-containerLegendFill containerLegend" id='2' onClick={prop.handleClickSection}>
       <div className="legend__tab">
         <i className="fa-regular fa-keyboard legend__tab--icon"></i>
         <h2 className="legend__tab--title">Rellena</h2>
       </div>
       <i className="rotate js-upArrowArray js-upArrow1 fa-solid fa-chevron-up legend__tab--arrow"></i>
     </legend>
-    <div className="js-container js-form__contact form__contact {/*hide*/}">
+    <div className={`js-container js-form__contact form__contact ${prop.isFillOpen ? '' : 'hide'}`}>
       <label className="form__contact--label" htmlFor="name">
         Nombre completo
       </label>

@@ -5,14 +5,14 @@ function Share(prop) {
   };
   return (
     <fieldset className="fieldset">
-      <legend className="js-containerLegend js-containerLegendShare containerLegend">
+      <legend className="js-containerLegend js-containerLegendShare containerLegend" id='3' onClick={prop.handleClickSection}>
         <div className="legend__tab">
           <i className="fa-solid fa-share-nodes legend__tab--icon"></i>
           <h2 className="legend__tab--title">Comparte</h2>
         </div>
         <i className="rotate js-upArrowArray js-upArrow2 fa-solid fa-chevron-up legend__tab--arrow"></i>
       </legend>
-      <div className="js-container js-containerCreate shareTwitter shareTwitter1 {/*hide*/}">
+      <div className={`js-container js-containerCreate shareTwitter shareTwitter1 ${prop.isShareOpen ? '' : 'hide'}`}>
         <button
           className="js-btn-create shareTwitter__buttoncreate btnOrange"
           type="button"

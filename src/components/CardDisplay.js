@@ -50,9 +50,7 @@ function CardDisplay(prop){
               (prop.data.linkedin ? '' : 'not-active')
             }
             href={
-              !prop.data.linkedin
-                ? ''
-                : `https://www.linkedin.com/in/${prop.data.linkedin}`
+              !prop.data.linkedin || `https://www.linkedin.com/in/${prop.data.linkedin}`
             }
             target="_blank"
             rel="noreferrer"
@@ -66,7 +64,7 @@ function CardDisplay(prop){
               'iconColor cardListElement__icon github ' +
               (prop.data.github ? '' : 'not-active')
             }
-            href={!prop.data.github ? '' : `https://github.com/${prop.data.github}`}
+            href={!prop.data.github || `https://github.com/${prop.data.github}`}
             target="_blank"
             rel="noreferrer"
           >

@@ -10,14 +10,14 @@ function Design(prop){
   };
 
     return (  <fieldset className="fieldset">
-    <legend className="js-containerLegend containerLegend">
+    <legend className="js-containerLegend containerLegend" id='1' onClick={prop.handleClickSection}>
       <div className="legend__tab">
         <i className="fa-solid fa-object-ungroup legend__tab--icon"></i>
         <h2 className="legend__tab--title">Diseña</h2>
       </div>
       <i className="js-upArrowArray js-upArrow fa-solid fa-chevron-up legend__tab--arrow"></i>
     </legend>
-    <div className="js-container palettes js-palettes">
+    <div className={`js-container palettes js-palettes ${prop.isDesignOpen ? '' : 'hide'}`}>
       <label className="palettes__text" htmlFor="color">
         Colores
       </label>

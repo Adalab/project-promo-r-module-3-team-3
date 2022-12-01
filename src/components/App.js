@@ -18,6 +18,9 @@ function App() {
   const [palette, setPalette] = useState("palette1");
 
   const [apiCard, setApiCard] = useState({});
+  const [isDesignOpen, setIsDesignOpen] = useState(true);
+  const [isFillOpen, setIsFillOpen] = useState(false);
+  const [isShareOpen, setIsShareOpen] = useState(false);
 
   const handleInput = (dataInfo) => {
     setData({ ...data, [dataInfo.name]: dataInfo.value});
@@ -44,6 +47,23 @@ function App() {
     });
   };
 
+  const handleClickSection = (ev) => {
+    const clickedId = ev.currentTarget.id;
+    if(clickedId === '1') {
+      setIsDesignOpen(true);
+      setIsFillOpen(false);
+      setIsShareOpen(false);
+    } else if (clickedId === '2') {
+      setIsDesignOpen(false);
+      setIsFillOpen(true);
+      setIsShareOpen(false);
+    } else if (clickedId === '3') {
+      setIsDesignOpen(false);
+      setIsFillOpen(false);
+      setIsShareOpen(true);
+    }
+  }
+
   return (
     <div>
       <Card
@@ -51,6 +71,10 @@ function App() {
         palette={palette}
         setPalette={setPalette}
         apiCard={apiCard}
+        isDesignOpen={isDesignOpen}
+        isFillOpen={isFillOpen}
+        isShareOpen={isShareOpen}
+        handleClickSection={handleClickSection}
         handleInput={handleInput}
         handleReset={handleReset}
         handleClickFetch={handleClickFetch}

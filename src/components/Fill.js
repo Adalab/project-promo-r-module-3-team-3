@@ -1,3 +1,4 @@
+import GetAvatar from "./GetAvatar";
 function Fill(prop) {
   const handleChange = (ev) => {
     prop.handleInput({
@@ -54,17 +55,9 @@ function Fill(prop) {
           Imagen de perfil
         </label>
         <div className="form__contact--div">
-          <label className="form__contact--btn" htmlFor="photo">
-            Añadir imagen
+          <label htmlFor="profileImage" className="add-image">
+            <GetAvatar avatar={prop.avatar} updateAvatar={prop.updateAvatar} />
           </label>
-          <input
-            className="js__profile-upload-btn hide"
-            type="file"
-            // TODO: añadir value de la foto
-            name="photo"
-            id="photo"
-          />
-          <div className="js__profile-preview form__contact--square"></div>
         </div>
         <label className="form__contact--label" htmlFor="email">
           Email

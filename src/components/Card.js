@@ -30,6 +30,8 @@ function Card(prop) {
             handleInput={prop.handleInput}
             isFillOpen={prop.isFillOpen}
             handleClickSection={prop.handleClickSection}
+            updateAvatar={prop.updateAvatar}
+            avatar={prop.avatar}
           />
           <Share
             apiCard={prop.apiCard}

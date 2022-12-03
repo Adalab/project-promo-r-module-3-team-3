@@ -4,6 +4,8 @@ import { useState } from "react";
 import Card from "./Card";
 
 function App() {
+  const [avatar, setAvatar] = useState("");
+
   const [data, setData] = useState({
     palette: "1",
     name: "",
@@ -12,8 +14,13 @@ function App() {
     email: "",
     linkedin: "",
     github: "",
-    photo: "https://picsum.photos/200/300",
+    photo: "",
   });
+
+  const updateAvatar = (avatar) => {
+    setAvatar(avatar);
+    setData({ ...data, photo: avatar });
+  };
 
   const [palette, setPalette] = useState("palette1");
 
@@ -54,6 +61,7 @@ function App() {
       photo: "",
     });
     setPalette("palette1");
+    setAvatar("");
   };
 
   const handleClickFetch = () => {
@@ -95,6 +103,8 @@ function App() {
         handleClickFetch={handleClickFetch}
         cleanLinkedin={cleanLinkedin}
         cleanGithub={cleanGithub}
+        updateAvatar={updateAvatar}
+        avatar={avatar}
       />
     </div>
   );

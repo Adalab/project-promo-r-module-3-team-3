@@ -16,7 +16,17 @@ function CardDisplay(prop) {
             {prop.data.job || "Front-end developer"}
           </h3>
         </div>
-        <div className="js__profile-image cardDisplay__card--photo"></div>
+        <div className="js__profile-image cardDisplay__card--photo">
+          {prop.data.photo !== "" ? (
+            <img
+              className="cardDisplay__card--photo"
+              src={prop.data.photo}
+              alt="foto de perfil"
+            />
+          ) : (
+            ""
+          )}
+        </div>
         <ul className="cardDisplay__card--iconList">
           <li className="cardListElement">
             <a

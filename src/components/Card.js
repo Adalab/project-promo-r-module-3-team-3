@@ -14,6 +14,8 @@ function Card(prop) {
           data={prop.data}
           handleReset={prop.handleReset}
           palette={prop.palette}
+          cleanLinkedin={prop.cleanLinkedin}
+          cleanGithub={prop.cleanGithub}
         />
         <form className="form" action="" method="post">
           <Design
@@ -23,8 +25,12 @@ function Card(prop) {
             handleInput={prop.handleInput}
             setPalette={prop.setPalette}
           />
-          <Fill data={prop.data} handleInput={prop.handleInput} isFillOpen={prop.isFillOpen}
-            handleClickSection={prop.handleClickSection} />
+          <Fill
+            data={prop.data}
+            handleInput={prop.handleInput}
+            isFillOpen={prop.isFillOpen}
+            handleClickSection={prop.handleClickSection}
+          />
           <Share
             apiCard={prop.apiCard}
             handleClickFetch={prop.handleClickFetch}

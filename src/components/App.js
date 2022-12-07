@@ -67,6 +67,7 @@ function App() {
   const handleClickFetch = () => {
     fetchApi(data).then((responseData) => {
       setApiCard(responseData);
+      console.log(responseData);
     });
   };
 

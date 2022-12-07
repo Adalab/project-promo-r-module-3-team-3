@@ -2,6 +2,7 @@ function Share(prop) {
   const handleShare = (ev) => {
     ev.preventDefault();
     prop.handleClickFetch();
+    console.log(prop.apiCard);
   };
   return (
     <fieldset className="fieldset">
@@ -25,7 +26,7 @@ function Share(prop) {
           </span>
         </button>
       </div>
-      <div className="js-shareTwitter shareTwitter {/*hide*/} shareTwitter2">
+      <div className={`shareTwitter shareTwitter2 ${prop.apiCard.success || 'hide'}`}>
         <h4 className="shareTwitter__text">La tarjeta ha sido creada:</h4>
         <a
           className="js-cardLink shareTwitter__link"

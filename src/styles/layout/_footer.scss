@@ -1,17 +1,17 @@
-.landingFooter {
-  height: 110px;
-
-  padding: 16px 10px 20px;
+.footer {
   background-color: $colorWhite;
+  padding: 0px 40px;
+  height: 15vh;
+  min-height: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  border-top: solid 1px #d8d8d8;
   @media all and (min-width: 768px) {
-    height: 60px;
-    padding: 10px 40px 10px 41px;
+    height: 8vh;
     flex-direction: row;
     justify-content: space-between;
+    align-content: center;
   }
  
 

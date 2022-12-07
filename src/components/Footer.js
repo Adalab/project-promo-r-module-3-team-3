@@ -1,8 +1,8 @@
 import logoAdalab from '../images/logo-adalab.png';
 function Footer(){
-    return (<footer className="landingFooter">
+    return (<footer className="footer">
     <a
-      className="landingFooter__text"
+      className="footer__text"
       href="https://twitter.com/ChamaleonGirls"
       title="@ChamaleonGirls"
       target="_blank"
@@ -11,7 +11,7 @@ function Footer(){
     </a>
     <a href="https://adalab.es/" title="Adalab" target="_blank">
       <img
-        className="landingFooter__logo"
+        className="footer__logo"
         src={logoAdalab}
         alt="logo de adalab"
       />

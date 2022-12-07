@@ -1,14 +1,17 @@
-.headerCreate {
-  padding:20px 0 20px;
+.header {
+  height: 15vh;
   display:flex;
   justify-content: center;
   align-items: center;
   background-color:$colorWhite;
   @media all and (min-width: 768px) {
-    justify-content: flex-start;
-    padding:31px 0 30px 40px;
+    height: 12vh;
+    justify-content: flex-start
     }
-  &__img{
+  &__link {
+    margin-left: 31px;
+  }
+  &__img {
     height:auto;
     width: 201px;
     }

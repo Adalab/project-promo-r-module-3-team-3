@@ -5,7 +5,7 @@ flex-direction: column;
 }
 
 .landing {
-  height: 100%;
+  min-height: 85vh;
   padding: 95px 20px 20px;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@ flex-direction: column;
   justify-content: center;
   background-color:#f5f5f5;
   @media all and (min-width: 768px) {
+    min-height: 92vh;
     padding: 80px 100px 60px;
     justify-content: flex-end;
   }

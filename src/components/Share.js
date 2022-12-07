@@ -2,7 +2,6 @@ function Share(prop) {
   const handleShare = (ev) => {
     ev.preventDefault();
     prop.handleClickFetch();
-    console.log(prop.apiCard);
   };
   return (
     <fieldset className="fieldset">

@@ -39,7 +39,6 @@ function App() {
     if (dataInfo.name === "linkedin") {
       if (dataInfo.value.includes("linkedin")) {
         setCleanLinkedin(dataInfo.value.substring(28));
-        console.log(setCleanLinkedin);
       } else setCleanLinkedin(dataInfo.value);
     }
 
@@ -71,7 +70,6 @@ function App() {
   const handleClickFetch = () => {
     fetchApi(data).then((responseData) => {
       setApiCard(responseData);
-      console.log(responseData);
     });
   };
 

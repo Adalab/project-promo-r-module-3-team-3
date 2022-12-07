@@ -15,18 +15,18 @@ function GetAvatar(prop) {
     // cuando pulsamos en la label o en <input type="file" />:
     // 1º se abre la ventana de nuestro ordenador para elegir un fichero
     // 2º cuando la usuaria elije un fichero se ejecuta este método manejador de eventos
-    console.log("La usuaria ha abierto la ventana para elegir ficheros");
+    //console.log("La usuaria ha abierto la ventana para elegir ficheros");
 
     // cuando se abre la ventana de nuestro navegador podemos elegir uno o varios ficheros por ello ev.currentTarget.files es una array
-    console.log("La usuaria ha elegido los ficheros", ev.currentTarget.files);
+    //console.log("La usuaria ha elegido los ficheros", ev.currentTarget.files);
 
     // para este ejercicio nos interesa solo el primero de los ficheros elegidos por la usuaria, por eso ponemos [0]
     // este primer fichero es un objeto con información útil del fichero como: nombre, última modificación, tamaño del fichero...
     // este objeto no tiene información privada del ordenador de la usuaria, por ejemplo no tenemos información de la carpeta en la que está la imagen
-    console.log(
+    /*console.log(
       "El primero de los ficheros elegidos es",
       ev.currentTarget.files[0]
-    );
+    );*/
 
     // compruebo si la usuaria ha elegido al menos un fichero
     if (ev.currentTarget.files.length > 0) {

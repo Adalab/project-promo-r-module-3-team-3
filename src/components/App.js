@@ -1,7 +1,11 @@
 import "../styles/App.scss";
 import fetchApi from "../services/api";
+import {Route, Routes} from 'react-router-dom';
 import { useState } from "react";
+import Landing from "./Landing";
 import Card from "./Card";
+import Footer from "./Footer";
+
 
 function App() {
   const [avatar, setAvatar] = useState("");
@@ -90,7 +94,9 @@ function App() {
 
   return (
     <div>
-      <Card
+      <Routes>
+        <Route path="/" element={<Landing />}></Route>
+        <Route path="/card" element={<Card
         data={data}
         palette={palette}
         setPalette={setPalette}
@@ -106,7 +112,9 @@ function App() {
         cleanGithub={cleanGithub}
         updateAvatar={updateAvatar}
         avatar={avatar}
-      />
+      />}></Route>
+      </Routes>
+      <Footer />
     </div>
   );
 }

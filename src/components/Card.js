@@ -41,7 +41,6 @@ function Card(prop) {
           />
         </form>
       </main>
-      <Footer />
     </>
   );
 }

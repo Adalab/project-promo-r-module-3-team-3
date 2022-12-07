@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.b7b5282c.css",
-    "main.js": "./static/js/main.efbb618b.js",
+    "main.css": "./static/css/main.785bda99.css",
+    "main.js": "./static/js/main.e48b15c8.js",
     "static/media/photoexample2.png": "./static/media/photoexample2.e27617cb6104ce2408a8.png",
     "static/media/logo-AdaCards.png": "./static/media/logo-AdaCards.8b6609b7565f7293c300.png",
     "index.html": "./index.html",
-    "main.b7b5282c.css.map": "./static/css/main.b7b5282c.css.map",
-    "main.efbb618b.js.map": "./static/js/main.efbb618b.js.map"
+    "main.785bda99.css.map": "./static/css/main.785bda99.css.map",
+    "main.e48b15c8.js.map": "./static/js/main.e48b15c8.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7b5282c.css",
-    "static/js/main.efbb618b.js"
+    "static/css/main.785bda99.css",
+    "static/js/main.e48b15c8.js"
   ]
 }

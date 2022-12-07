@@ -15,9 +15,9 @@ function Design(prop){
         <i className="fa-solid fa-object-ungroup legend__tab--icon"></i>
         <h2 className="legend__tab--title">Diseña</h2>
       </div>
-      <i className="js-upArrowArray js-upArrow fa-solid fa-chevron-up legend__tab--arrow"></i>
+      <i className={`fa-solid fa-chevron-${prop.isDesignOpen ? 'up' : 'down'} legend__tab--arrow`}></i>
     </legend>
-    <div className={`js-container palettes js-palettes ${prop.isDesignOpen ? '' : 'hide'}`}>
+    <div className={`palettes ${prop.isDesignOpen ? '' : 'hide'}`}>
       <label className="palettes__text" htmlFor="color">
         Colores
       </label>

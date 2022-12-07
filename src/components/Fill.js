@@ -18,10 +18,10 @@ function Fill(prop) {
           <i className="fa-regular fa-keyboard legend__tab--icon"></i>
           <h2 className="legend__tab--title">Rellena</h2>
         </div>
-        <i className="rotate js-upArrowArray js-upArrow1 fa-solid fa-chevron-up legend__tab--arrow"></i>
+        <i className={`fa-solid fa-chevron-${prop.isFillOpen ? 'up' : 'down'} legend__tab--arrow`}></i>
       </legend>
       <div
-        className={`js-container js-form__contact form__contact ${
+        className={`form__contact ${
           prop.isFillOpen ? "" : "hide"
         }`}
       >

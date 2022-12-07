@@ -10,9 +10,9 @@ function Share(prop) {
           <i className="fa-solid fa-share-nodes legend__tab--icon"></i>
           <h2 className="legend__tab--title">Comparte</h2>
         </div>
-        <i className="rotate js-upArrowArray js-upArrow2 fa-solid fa-chevron-up legend__tab--arrow"></i>
+        <i className={`fa-solid fa-chevron-${prop.isShareOpen ? 'up' : 'down'} legend__tab--arrow`}></i>
       </legend>
-      <div className={`js-container js-containerCreate shareTwitter shareTwitter1 ${prop.isShareOpen ? '' : 'hide'}`}>
+      <div className={`shareTwitter shareTwitter1 ${prop.isShareOpen ? '' : 'hide'}`}>
         <button
           className="js-btn-create shareTwitter__buttoncreate btnOrange"
           type="button"
